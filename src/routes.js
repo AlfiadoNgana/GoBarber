@@ -12,6 +12,7 @@ const SessionController = require('./app/controllers/SessionController')
 const DashboardController = require('./app/controllers/DashboardController')
 const FileController = require('./app/controllers/FileController')
 const AppoitmentController = require('./app/controllers/AppoitmentController')
+const AvailableController = require('./app/controllers/AvailableController')
 
 routes.use((req, res, next) => {
   res.locals.flashSuccess = req.flash('success')
@@ -35,5 +36,7 @@ routes.get('/app/logout', SessionController.destroy)
 routes.get('/app/dashboard', DashboardController.index)
 
 routes.get('/app/appoitments/new/:provider', AppoitmentController.create)
+
+routes.get('/app/available/:provider', AvailableController.index)
 
 module.exports = routes
