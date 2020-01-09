@@ -36,6 +36,7 @@ routes.get('/app/logout', SessionController.destroy)
 routes.get('/app/dashboard', DashboardController.index)
 
 routes.get('/app/appoitments/new/:provider', AppoitmentController.create)
+routes.post('/app/appoitments/new/:provider', AppoitmentController.store)
 
 routes.get('/app/available/:provider', AvailableController.index)
 
